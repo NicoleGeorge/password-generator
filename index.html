@@ -19,24 +19,39 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
-          <form>
-            <!-- slide value range -->
-            <label for = " ">Number of Characters</label>
-            <input type="range" min="1" max="25" value="12" id ="charRange">
-            <input type="number" min="1" max="25" value="12" id="charNumber">
-
-              <!-- password criteria checkbox prompts -->
-            <label for=" ">Include Lowercase</label>
-            <input type="checkbox" id="includeLowercase">
-
-            <label for=" ">Include Uppercase</label>
-            <input type="checkbox" id="includeUppercase">
-
-            <label for=" ">Include Numbers</label>
-            <input type="checkbox" id="includeNumbers">
-
-            <label for=" ">Include Special Characters</label>
-            <input type="checkbox" id="includeSpecialCharacters">
+            <div class="container">
+              <form class="form">
+                <!-- password length value range -->
+                <!-- sit on the same line -->
+                <div class="row numberRange">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <label class="valueTitle" for = " ">Number of Characters</label>
+                    <input class="slider" type="range" min="1" max="25" value="10" id="charRange">
+                    <input class="digits" type="number" min="1" max="25" value="10" id="charNumber">
+                  </div>
+                </div>
+            </div>
+          
+          <div class="row no-gutters inputs">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <!-- password criteria checkbox prompts -->
+                <label for=" ">Include Lowercase</label>
+                <input type="checkbox" id="includeLowercase">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+              <label for=" ">Include Uppercase</label>
+              <input type="checkbox" id="includeUppercase">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+              <label for=" ">Include Numbers</label>
+              <input type="checkbox" id="includeNumbers">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+              <label for=" ">Include Symbols</label>
+              <input type="checkbox" id="includeSymbols">
+            </div>
+          </div>
+             
 
           </form>
         </div>
