@@ -145,7 +145,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
+#printPassword {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

@@ -27,29 +27,32 @@
                 <div class="row numberRange">
                   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <label class="valueTitle" for = " ">Number of Characters</label>
-                    <input class="slider" type="range" min="1" max="25" value="10" id="charRange">
-                    <input class="digits" type="number" min="1" max="25" value="10" id="charNumber">
+                    <input class="slider" type="range" min="1" max="25" value="12" id="charAmountRange">
+                    <input class="digits" type="number" min="1" max="25" value="12" id="charAmountNumber">
                   </div>
                 </div>
             </div>
+          <!-- password criteria checkboxs-->
           
           <div class="row no-gutters inputs">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <!-- password criteria checkbox prompts -->
-                <label for=" ">Include Lowercase</label>
-                <input type="checkbox" id="includeLowercase">
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-              <label for=" ">Include Uppercase</label>
-              <input type="checkbox" id="includeUppercase">
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-              <label for=" ">Include Numbers</label>
-              <input type="checkbox" id="includeNumbers">
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-              <label for=" ">Include Symbols</label>
-              <input type="checkbox" id="includeSymbols">
+            <div class="user-inputs">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                  
+                  <label for="includeLowercase">Include Lowercase</label>
+                  <input type="checkbox" id="includeLowercase">
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <label for="includeUppercase">Include Uppercase</label>
+                <input type="checkbox" id="includeUppercase">
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <label for="includeNumbers">Include Numbers</label>
+                <input type="checkbox" id="includeNumbers">
+              </div>
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <label for="includeSymbols">Include Symbols</label>
+                <input type="checkbox" id="includeSymbols">
+              </div>
             </div>
           </div>
              
@@ -57,7 +60,7 @@
           </form>
         </div>
         <div class="card-body">
-          <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+          <textarea readonly id="printPassword" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
         </div>
         <div class="card-footer">
           <button type="submit" id="generate" class="btn">Generate Password</button>
