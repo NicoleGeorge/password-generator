@@ -6,7 +6,7 @@ var includeLowercaseEl = document.getElementById('includeLowercase');
 var includeUppercaseEl = document.getElementById('includeUppercase');
 var includeNumbersEl = document.getElementById('includeNumbers');
 var includeSymbolsEl = document.getElementById('includeSymbols');
-var printPassword = document.getElementById('printPassword');
+var printPasswordEl = document.getElementById('printPassword');
 var generateBtn = document.getElementById('generate');
 var clipboardEl = document.getElementById('clipboard');
 
@@ -17,6 +17,11 @@ var randomPassword = {
   symbol: getRandomSymbol
 };
 
+// Stage 6: Adding the generated password to the display text area field.
+
+clipboardEl.addEventListener('click', () => {
+
+})
 
 // Stage 1: Syncing the Slider & Number input fields - making them dynamic
 
@@ -38,7 +43,7 @@ generateBtn.addEventListener('click', () => {
   var includeNumbers = includeNumbersEl.checked;
   var includeSymbols = includeSymbolsEl.checked;
 
-  resultEl.innerText = generatePassword(includeLowercase, includeUppercase, includeNumbers, includeSymbols, length);
+  printPasswordEl.innerText = generatePassword(includeLowercase, includeUppercase, includeNumbers, includeSymbols, length);
 });
 
 
@@ -46,14 +51,48 @@ generateBtn.addEventListener('click', () => {
 
 function generatePassword(lower, upper, number, symbol, length) {
 
-  // 1. create a string of variables based on user input criteria
-  // 2. filter out unchecked boxes - if not check, don't want it to generate anything
-  // 3. loop over length call generator function for each critera input
-  // 4. Add the generated password to the display text area field.
+
+
+  // Create a string of variables based on user input criteria
+
+  var generatedPassword = '' ;
+  var typesCount = lower + upper + number + symbol;
+
+  // console.log('typesCount: ', typesCount); working.
+
+  // var typesArray = [lower, upper, number, symbol];
+
+  // Filter out unchecked boxes - if not check, don't want it to generate anything
+
+  var typesArray = [{lower}, {upper}, {number}, {symbol}].filter(
+    item => Object.values(item)[0]
+    ); 
+
+  console.log('typesArray:', typesArray); // returning correct array sequence
+
+    // checking if no checkboxes are checked
+
+    if (typesCount === 0) {
+      return '';
+    }
+  
+    //loop over length call generator function for each critera input
+  
+    for(var i = 0; i < length; i += typesCount) {
+      typesArray.forEach(type => {
+        var funcCriteria = Object.keys(type)[0];
+
+        //console.log('funcCriteria: ', funcCriteria); --> working correctly
+
+        generatedPassword += randomPassword [funcCriteria] ();
+      })
+    }
+    //console.log(generatedPassword.slice(0,length)); 
+    // only generating password length selector - not how many boxes checked
 }
 
 
-//  Stage 2: GENERATE FUNCTIONS //
+//  Stage 2: GENERATE FUNCTIONS // using ASCII (https://www.ascii-code.com/)
 
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -75,7 +114,16 @@ function getRandomSymbol() {
 //console.log(getRandomSymbol());
 
 
+// FINAL Stage: Password Validation 
 
+function validatePassword() {
+  var password = document.getElementById('password');
+  var valid = password.value.length >=8;
+  if (!valid) {
+    setErrorMessage(password, 'Password must be at least 8 characters')
+  }
+  return valid;
+}
 
 
 
@@ -174,16 +222,7 @@ function getRandomSymbol() {
 // }
 
 
-// // Password Validation 
 
-// function validatePassword() {
-//   var password = document.getElementById('password');
-//   var valid = password.value.length >=8;
-//   if (!valid) {
-//     setErrorMessage(password, 'Password must be at least 8 characters')
-//   }
-//   return valid;
-// }
 
 // // // Assignment Code
 
