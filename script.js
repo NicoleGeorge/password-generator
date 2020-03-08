@@ -2,8 +2,8 @@
 
 var lengthEl = document.getElementById('charAmountNumber');
 var form = document.getElementById('passwordGeneratorForm');
-var includeLowerCaseEl = document.getElementById('includeLowercase');
-var includeUpperCaseEl = document.getElementById('includeUppercase');
+var includeLowercaseEl = document.getElementById('includeLowercase');
+var includeUppercaseEl = document.getElementById('includeUppercase');
 var includeNumbersEl = document.getElementById('includeNumbers');
 var includeSymbolsEl = document.getElementById('includeSymbols');
 var printPassword = document.getElementById('printPassword');
@@ -31,9 +31,26 @@ function syncCharAmount (event) {
 }
 
 generateBtn.addEventListener('click', () => {
-  var length = lengthEl.value;
-  console.log(length);
+  var length = +lengthEl.value;
+  var includeLowercase = includeLowercaseEl.checked; //keeps throwing an error on this line?//
+  var includeUppercase = includeUppercaseEl.checked;
+  var includeNumbers = includeNumbersEl.checked;
+  var includeSymbols = includeSymbolsEl.checked;
+
+  console.log(includeLowercase, includeUppercase, includeNumbers, includeSymbols);
 });
+
+
+// Stage 2: Syncing the checkboxes to the password generate field
+
+// form.addEventListener("submit", event => {
+//   event.preventDefault()
+//   var characterAmount = charAmountNumber.value
+//   
+//   
+//   
+//   
+
 
 //  Stage 2: GENERATE FUNCTIONS //
 
@@ -54,7 +71,7 @@ function getRandomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-console.log(getRandomSymbol());
+//console.log(getRandomSymbol());
 
 
 
