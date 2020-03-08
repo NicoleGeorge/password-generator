@@ -17,10 +17,10 @@ var randomPassword = {
   symbol: getRandomSymbol
 };
 
-// Stage 6: Adding the generated password to the display text area field.
+// Stage 6: Copying to clipboard
 
 clipboardEl.addEventListener('click', () => {
-
+  var textarea = document.createElement('textarea');
 })
 
 // Stage 1: Syncing the Slider & Number input fields - making them dynamic
@@ -38,12 +38,14 @@ function syncCharAmount (event) {
 
 generateBtn.addEventListener('click', () => {
   var length = +lengthEl.value;
-  var includeLowercase = includeLowercaseEl.checked; //keeps throwing an error on this line?//
+  var includeLowercase = includeLowercaseEl.checked; 
   var includeUppercase = includeUppercaseEl.checked;
   var includeNumbers = includeNumbersEl.checked;
   var includeSymbols = includeSymbolsEl.checked;
 
-  printPasswordEl.innerText = generatePassword(includeLowercase, includeUppercase, includeNumbers, includeSymbols, length);
+  printPasswordEl.innerText = generatePassword(
+    includeLowercase, includeUppercase, includeNumbers, 
+    includeSymbols, length);
 });
 
 
@@ -87,9 +89,19 @@ function generatePassword(lower, upper, number, symbol, length) {
         generatedPassword += randomPassword [funcCriteria] ();
       })
     }
-    //console.log(generatedPassword.slice(0,length)); 
+    //
     // only generating password length selector - not how many boxes checked
-}
+
+
+    // Adding the generated password to the display text area field.
+
+    var password = generatedPassword.slice(0,length); 
+
+    return password;
+  }
+  
+
+
 
 
 //  Stage 2: GENERATE FUNCTIONS // using ASCII (https://www.ascii-code.com/)
