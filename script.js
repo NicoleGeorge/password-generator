@@ -18,7 +18,6 @@ var randomPassword = {
 };
 
 
-
 // Stage 1: Syncing the Slider & Number input fields - making them dynamic
 
 charAmountRange.addEventListener("input", syncCharAmount)
@@ -30,6 +29,8 @@ function syncCharAmount (event) {
   charAmountRange.value = value
 }
 
+// Stage 4: Syncing the checkboxes | Generate event listener
+
 generateBtn.addEventListener('click', () => {
   var length = +lengthEl.value;
   var includeLowercase = includeLowercaseEl.checked; //keeps throwing an error on this line?//
@@ -37,19 +38,19 @@ generateBtn.addEventListener('click', () => {
   var includeNumbers = includeNumbersEl.checked;
   var includeSymbols = includeSymbolsEl.checked;
 
-  console.log(includeLowercase, includeUppercase, includeNumbers, includeSymbols);
+  resultEl.innerText = generatePassword(includeLowercase, includeUppercase, includeNumbers, includeSymbols, length);
 });
 
 
-// Stage 2: Syncing the checkboxes to the password generate field
+// Stage 5: Generate password function
 
-// form.addEventListener("submit", event => {
-//   event.preventDefault()
-//   var characterAmount = charAmountNumber.value
-//   
-//   
-//   
-//   
+function generatePassword(lower, upper, number, symbol, length) {
+
+  // 1. create a string of variables based on user input criteria
+  // 2. filter out unchecked boxes - if not check, don't want it to generate anything
+  // 3. loop over length call generator function for each critera input
+  // 4. Add the generated password to the display text area field.
+}
 
 
 //  Stage 2: GENERATE FUNCTIONS //
