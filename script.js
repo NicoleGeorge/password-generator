@@ -75,13 +75,15 @@ function generatePassword(lower, upper, number, symbol, length) {
 
   if (symbol)
     typesArray.push("symbol");
+  
+    // console.info(typesArray); trying to find where the bug is!
 
   // Filter out unchecked boxes - if not check, don't want it to generate anything
 
   // checking if no checkboxes are checked
 
     if (typesArray.length === 0) 
-      return 'empty!!!!';
+      return '';
   
     var lowercase = 'qwertyuiopasdfghjklzxcvbnm';
     var uppercase = 'QWERTYUIOPASDFGHJKLZXCVBNM';
@@ -91,21 +93,21 @@ function generatePassword(lower, upper, number, symbol, length) {
     //loop over length call generator function for each critera input
   
     for(var i = 0; i < length; i++) {
-      var type = typesArray[Math.floor(Math.random * typesArray.length)];
-console.log("type: " + type);
-      var randomChar = "V";
+      var type = typesArray[Math.floor(Math.random() * typesArray.length)];
+      
+      var randomChar;
 
       if (type == "lower") {
-       randomChar = lowercase.charAt(Math.floor(Math.random * lowercase.length));
+       randomChar = lowercase.charAt(Math.floor(Math.random() * lowercase.length));
       }
       else if (type == "upper") {
-        randomChar = uppercase.charAt(Math.floor(Math.random * uppercase.length));
+        randomChar = uppercase.charAt(Math.floor(Math.random() * uppercase.length));
       }
       else if (type == "number") {
-        randomChar = numbers.charAt(Math.floor(Math.random * numbers.length));
+        randomChar = numbers.charAt(Math.floor(Math.random() * numbers.length));
       }
       else if (type == "symbol") {
-        randomChar = symbols.charAt(Math.floor(Math.random * symbols.length));
+        randomChar = symbols.charAt(Math.floor(Math.random() * symbols.length));
       }
       
       generatedPassword += randomChar;
