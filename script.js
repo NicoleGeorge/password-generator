@@ -15,7 +15,7 @@ var clipboardEl = document.getElementById('clipboard');
 
 clipboardEl.addEventListener('click', () => {
   var textarea = document.createElement('textarea');
-  var password = printPasswordEl.innerText;
+  var password = printPasswordEl.value;
 
   if (!password) {
     return
@@ -48,10 +48,25 @@ generateBtn.addEventListener('click', () => {
   var includeNumbers = includeNumbersEl.checked;
   var includeSymbols = includeSymbolsEl.checked;
 
-  printPasswordEl.innerText = generatePassword(
-    includeLowercase, includeUppercase, includeNumbers, 
-    includeSymbols, length);
-});
+  // FINAL STAGE: Validating user input //
+
+  if (length < 8)
+      length = 8;
+    else if (length > 128)
+      length = 128;
+
+  if (includeLowercase != true && includeUppercase != true 
+    && includeNumbers != true && includeSymbols != true)
+  {
+    alert("Please select at least one type of character");
+  }
+  else {
+      printPasswordEl.innerText = generatePassword(
+      includeLowercase, includeUppercase, includeNumbers, 
+      includeSymbols, length);
+  }
+  
+  });
 
 
 // Stage 5: Generate password function
@@ -121,43 +136,8 @@ function generatePassword(lower, upper, number, symbol, length) {
 
     return generatedPassword;
   }
-  
 
 
-
-// wanted to simplify the code; removed the ASCII code and inserted character manually:
-//  Stage 2: GENERATE FUNCTIONS // using ASCII (https://www.ascii-code.com/)
-
-// function getRandomLower() {
-//   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-// }
-
-// function getRandomUpper() {
-//   return String.fromCharCode(Math.floor(Math.random() * 26) + 5);
-// }
-
-// function getRandomNumber() {
-//   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-// }
-
-// function getRandomSymbol() {
-//   var symbols = '!@#$%^&*(){}[]=<>/,.';
-//   return symbols[Math.floor(Math.random() * symbols.length)];
-// }
-
-//console.log(getRandomSymbol());
-
-
-// FINAL Stage: Password Validation 
-
-function validatePassword() {
-  var password = document.getElementById('password');
-  var valid = password.value.length >=8;
-  if (!valid) {
-    setErrorMessage(password, 'Password must be at least 8 characters')
-  }
-  return valid;
-}
 
 
 
