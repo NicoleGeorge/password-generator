@@ -1,4 +1,4 @@
-// Stage 3: create DOM ELEMENTS //
+// all DOM ELEMENTS
 
 var lengthEl = document.getElementById('charAmountNumber');
 var form = document.getElementById('passwordGeneratorForm');
@@ -11,7 +11,7 @@ var generateBtn = document.getElementById('generate');
 var clipboardEl = document.getElementById('clipboard');
 
 
-// Stage 6: Copying to clipboard
+// Copying generated password to clipboard
 
 clipboardEl.addEventListener('click', () => {
   var textarea = document.createElement('textarea');
@@ -28,7 +28,7 @@ clipboardEl.addEventListener('click', () => {
   alert('password copied to clipboard');
 })
 
-// Stage 1: Syncing the Slider & Number input fields - making them dynamic
+// Syncing the Slider & Number input fields
 
 charAmountRange.addEventListener("input", syncCharAmount)
 charAmountNumber.addEventListener("input", syncCharAmount)
@@ -39,7 +39,7 @@ function syncCharAmount (event) {
   charAmountRange.value = value
 }
 
-// Stage 4: Syncing the checkboxes | Generate event listener
+// Syncing the checkboxes 
 
 generateBtn.addEventListener('click', () => {
   var length = +lengthEl.value;
@@ -48,7 +48,7 @@ generateBtn.addEventListener('click', () => {
   var includeNumbers = includeNumbersEl.checked;
   var includeSymbols = includeSymbolsEl.checked;
 
-  // FINAL STAGE: Validating user input //
+  // Validating user input 
 
   if (length < 8)
       length = 8;
@@ -69,9 +69,9 @@ generateBtn.addEventListener('click', () => {
   });
 
 
-// Stage 5: Generate password function
+  // Generate password function 
 
-function generatePassword(lower, upper, number, symbol, length) {
+  function generatePassword(lower, upper, number, symbol, length) {
 
   // Create a string of variables based on user input criteria
 
@@ -91,21 +91,18 @@ function generatePassword(lower, upper, number, symbol, length) {
   if (symbol)
     typesArray.push("symbol");
   
-    // console.info(typesArray); trying to find where the bug is!
 
-  // Filter out unchecked boxes - if not check, don't want it to generate anything
-
-  // checking if no checkboxes are checked
+  // validating each checkbox
 
     if (typesArray.length === 0) 
       return '';
   
-    var lowercase = 'qwertyuiopasdfghjklzxcvbnm';
-    var uppercase = 'QWERTYUIOPASDFGHJKLZXCVBNM';
-    var numbers = '1234567890';
-    var symbols = '!@#$%^&*(){}[]=<>/,.';
+      var lowercase = 'qwertyuiopasdfghjklzxcvbnm';
+      var uppercase = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+      var numbers = '1234567890';
+      var symbols = '!@#$%^&*(){}[]=<>/,.';
 
-    //loop over length call generator function for each critera input
+  // looping over length call generator function for each critera input
   
     for(var i = 0; i < length; i++) {
       var type = typesArray[Math.floor(Math.random() * typesArray.length)];
@@ -128,11 +125,7 @@ function generatePassword(lower, upper, number, symbol, length) {
       generatedPassword += randomChar;
     }
 
-
-    // only generating password length selector - not how many boxes checked
-
-
-    // Adding the generated password to the display text area field.
+    // Adding the generated password to the display text area field. 
 
     return generatedPassword;
   }
