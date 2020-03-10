@@ -5,6 +5,9 @@
 *::after {
   box-sizing: border-box;
 }
+body {
+  background: url('backgroound-image-2.jpg');
+}
 
 html,
 body,
@@ -13,10 +16,33 @@ body,
   margin: 10px;
   padding: 0;
 }
+.title {
+  font-size: 56px;
+  margin-top: 32px;
+  color: rgba(139, 69, 19, 0.796);
+  font-family: monospace;
+  text-transform: uppercase;
+  font-weight: 500;
+}
 
 h2 {
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: lowercase;
   text-align: center;
+  font-weight: 500;
   margin: 15px 5px;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 200;
+  font-family: sans-serif;
+}
+
+.valueTitle {
+  font-size: 24px;
+  margin-left: 25px;
 }
 
 body {
@@ -44,22 +70,25 @@ header {
 /* main body */
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color:  hsla(337, 38%, 85%, 0.515);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  color: hsl(240, 2%, 16%);
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
 }
 
+.card-header {
+  background-color: rgba(181, 120, 14, 0.741);
+}
 .card-header::after {
   content: " ";
   display: block;
   width: 100%;
-  background: #e7e9eb;
+  background: #ffe1e9;
   height: 2px;
 }
 
@@ -117,11 +146,11 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: rgb(181, 120, 14);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
-  color: hsl(0, 0%, 100%);
+  color: hsl(317, 64%, 94%);
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -132,8 +161,8 @@ header {
 }
 
 .btn:hover {
-  background-color: rgba(175, 8, 8, 0.564);
-  color: black;
+  background-color: hsl(317, 64%, 94%);
+  color:  rgb(181, 120, 14);
 }
 
 button[disabled] {

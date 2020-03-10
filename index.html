@@ -9,7 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css"/>
-    <title>Password Generator</title>
+    <title class="title">Password Generator</title>
   </head>
   <body>
     <div class="wrapper">
@@ -18,7 +18,8 @@
       </header>
       <div class="card">
         <div class="card-header">
-          <h2>Generate a Password</h2>
+          <h2>Please Generate a Password</h2>
+          <p>select your password length, <br>then characters you would like to include</p>
             <div class="container">
                 <!-- added id on form to link with Javascript -->
               <form class="form" id="passwordGeneratorForm">
@@ -26,7 +27,7 @@
                 <!-- sit on the same line -->
                 <div class="row numberRange">
                   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <label class="valueTitle" for = " ">Number of Characters</label>
+                    <label class="valueTitle" for = " ">Password Length</label>
                     <input class="slider" type="range" min="8" max="128" value="18" id="charAmountRange">
                     <input class="digits" type="number" min="8" max="128" value="18" id="charAmountNumber">
                   </div>
@@ -42,7 +43,7 @@
                   <input type="checkbox" id="includeLowercase">
               </div>
               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                <label for="includeUppercase">Include Uppercase</label>
+                <label for="includeUppercase">Inclue Uppercase</label>
                 <input type="checkbox" id="includeUppercase">
               </div>
               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
