@@ -1,5 +1,7 @@
 Password Generator Project:
 
+VIEW APP: https://nicolegeorge.github.io/wk3-password-generator/
+
 Brief:
 Create an application that generates a random password based on user-selected criteria. 
 
