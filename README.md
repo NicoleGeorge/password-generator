@@ -25,6 +25,13 @@ Stage 6 - copying the newly generated password to clipboad.
 
 Final Stage - valdating the user input via if/else statement; even though the slider was set to min = 8 & max = 128. this validaton was incuded to mitigate vulnerability, namely malicious Javascript code injections, which may compromising the integrity of the password generator. An alert box was added to prompt user if they select a password length < 8 or > 128.
 
+Screenshots: 
+
+![Image description](link-to-image)
+
+![Image description](link-to-image)
+
+![Image description](link-to-image)
 
 
 
