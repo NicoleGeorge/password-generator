@@ -27,11 +27,17 @@ Final Stage - valdating the user input via if/else statement; even though the sl
 
 Screenshots: 
 
-![Image description](link-to-image)
+FULL SCREEN - PRE PASSWORD:
+![Image description](https://github.com/NicoleGeorge/wk3-password-generator/blob/master/screenshots/full-size-startpng.png)
 
-![Image description](link-to-image)
+FULL SCREEN - GENERATED PASSWORD:
+![Image description](https://github.com/NicoleGeorge/wk3-password-generator/blob/master/screenshots/full-size-password.png)
 
-![Image description](link-to-image)
+MOBILE VIEWPORT - PRE PASSWORD
+![Image description](https://github.com/NicoleGeorge/wk3-password-generator/blob/master/screenshots/mobile-size-start.png)
+
+MOBILE VIEWPORT - GENERATED PASSWORD:
+![Image description](https://github.com/NicoleGeorge/wk3-password-generator/blob/master/screenshots/mobile-size-password.png)
 
 
 
